@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none;
 }
 
 :root {
@@ -7720,4 +7719,150 @@ section {
 
 .education-card:hover {
     transform: translateY(-5px);
+}
+@media (max-width: 768px) {
+    .home-section {
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .home-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .home-text h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .home-text p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .home-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .primary-btn, .secondary-btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+
+    .home-image {
+        max-width: 250px;
+        max-height: 250px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: var(--background-color);
+    }
+
+    /* Add padding to body to prevent content from being hidden */
+    body {
+        padding-top: 70px; /* Adjust based on your actual navbar height */
+    }
+
+    /* Sections to have top padding */
+    .home-section,
+    .about-section,
+    .skills-section,
+    .projects-section,
+    .experience-section,
+    .achievements-section,
+    .contact-section {
+        padding-top: calc(5rem + 70px); /* Original padding + navbar height */
+        margin-top: -70px; /* Offset to prevent extra space */
+    }
+
+    /* Ensure full-width container in mobile view */
+    .container {
+        padding: 0 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .hero-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-text p {
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-description {
+        text-align: center;
+        width: 100%;
+    }
+
+    .tech-tags {
+        justify-content: center;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .primary-btn, .secondary-btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .terminal-container {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
 }
