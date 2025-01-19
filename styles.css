@@ -157,6 +157,7 @@ button:hover ~ .custom-cursor,
 p, li, .tech-tag {
     color: var(--text-color);
     line-height: 1.8;
+    font-style: italic;
 }
 
 /* Improve link accessibility */
