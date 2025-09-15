@@ -1,5 +1,11 @@
 // Initialize on document load
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize EmailJS for contact form
+  initializeEmailJS();
+
+  // Setup contact form
+  initContactForm();
+
   // Mobile menu toggle
   setupMobileMenu();
 
@@ -13,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setup3DBackground();
 
   // Custom cursor
-  setupCustomCursor();
 
   // Typing animation
   typeText();
@@ -349,10 +354,14 @@ function initAchievements() {
 }
 
 // Initialize EmailJS
-(function () {
-  emailjs.init("fybrVUXzlaLXc_fRJ");
-  console.log("EmailJS initialized");
-})();
+function initializeEmailJS() {
+  try {
+    emailjs.init("fybrVUXzlaLXc_fRJ");
+    console.log("EmailJS initialized successfully");
+  } catch (error) {
+    console.error("Failed to initialize EmailJS:", error);
+  }
+}
 
 // Handle contact form submission
 function handleContactFormSubmit(event) {
@@ -372,6 +381,7 @@ function handleContactFormSubmit(event) {
   const formData = {
     name: form.querySelector("#name").value,
     email: form.querySelector("#email").value,
+    phone: form.querySelector("#phone").value,
     projectType: form.querySelector("#project-type").value,
     message: form.querySelector("#message").value,
   };
@@ -382,6 +392,7 @@ function handleContactFormSubmit(event) {
   const templateParams = {
     from_name: formData.name,
     from_email: formData.email,
+    from_phone: formData.phone,
     project_type: formData.projectType,
     message: formData.message,
     to_name: "Sachin",
@@ -406,10 +417,20 @@ function handleContactFormSubmit(event) {
       let errorMessage = "Failed to send message. ";
       if (error.text) {
         errorMessage += error.text;
+      } else if (error.message) {
+        errorMessage += error.message;
       } else {
-        errorMessage += "Please try again later.";
+        errorMessage += "Please check your network connection and try again.";
       }
       showFormMessage(errorMessage, "error");
+
+      // Log more details for debugging
+      console.error("Error details:", {
+        status: error.status,
+        text: error.text,
+        message: error.message,
+        stack: error.stack,
+      });
     })
     .finally(function () {
       submitButton.disabled = false;
@@ -439,7 +460,9 @@ function showFormMessage(message, type) {
 }
 
 // Initialize everything when DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
+// We'll use the main DOMContentLoaded event listener at the top of the file instead
+// This function will be called from there
+function initContactForm() {
   // Add contact form submission handler
   const contactForm = document.querySelector("#contact-form");
   if (contactForm) {
@@ -448,23 +471,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Contact form not found!");
   }
-
-  typeText();
-  observeCounters();
-  initAchievements();
-
-  // Setup 3D background
-  setup3DBackground();
-
-  // Setup custom cursor
-  setupCustomCursor();
-
-  // Add a dark/light mode toggle
-  addThemeToggle();
-
-  // Add animations to elements
-  addScrollAnimations();
-});
+}
 
 // 3D background setup using Three.js
 function setup3DBackground() {
@@ -474,6 +481,12 @@ function setup3DBackground() {
   // If we have a Spline viewer, don't initialize Three.js background
   if (splineViewer) {
     console.log("Spline viewer detected, skipping Three.js background");
+    return;
+  }
+
+  // Check if this is a mobile device (screen width 576px or less)
+  if (window.innerWidth <= 576) {
+    console.log("Mobile device detected, skipping 3D background");
     return;
   }
 
@@ -599,68 +612,23 @@ function setup3DBackground() {
     };
 
     animate();
-  }
-}
 
-// Custom cursor setup
-function setupCustomCursor() {
-  const cursorDot = document.createElement("div");
-  cursorDot.className = "cursor-dot";
-
-  const cursorOutline = document.createElement("div");
-  cursorOutline.className = "cursor-outline";
-
-  document.body.appendChild(cursorDot);
-  document.body.appendChild(cursorOutline);
-
-  window.addEventListener("mousemove", (e) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
-
-    // Dot follows cursor exactly
-    cursorDot.style.left = `${posX}px`;
-    cursorDot.style.top = `${posY}px`;
-
-    // Outline follows with a slight delay for a trailing effect
-    cursorOutline.animate(
-      {
-        left: `${posX}px`,
-        top: `${posY}px`,
-      },
-      { duration: 200, fill: "forwards" }
-    );
-
-    // Check if hovering over links or buttons
-    const hoverElements = document.querySelectorAll(
-      "a, button, .project-card, .service-card"
-    );
-    let isHovering = false;
-
-    hoverElements.forEach((element) => {
-      if (element.matches(":hover")) {
-        isHovering = true;
-        cursorOutline.classList.add("hovering");
+    // Handle window resize
+    window.addEventListener("resize", () => {
+      // If resized to mobile width, remove the canvas
+      if (window.innerWidth <= 576) {
+        if (canvas && canvas.parentNode) {
+          canvas.parentNode.removeChild(canvas);
+        }
+      } else {
+        // If canvas was removed but we're back to desktop size, refresh the page to reinitialize
+        if (!document.getElementById("hero-3d-canvas") && heroSection) {
+          // Only reload if we're on a page with hero section and the 3D canvas is missing
+          window.location.reload();
+        }
       }
     });
-
-    if (!isHovering) {
-      cursorOutline.classList.remove("hovering");
-    }
-  });
-
-  // Hide cursor when mouse leaves window
-  document.addEventListener("mouseleave", () => {
-    cursorDot.style.display = "none";
-    cursorOutline.style.display = "none";
-  });
-
-  document.addEventListener("mouseenter", () => {
-    cursorDot.style.display = "block";
-    cursorOutline.style.display = "block";
-  });
-
-  // Add CSS class to hide default cursor
-  document.body.classList.add("custom-cursor");
+  }
 }
 
 // Add a dark/light mode toggle
