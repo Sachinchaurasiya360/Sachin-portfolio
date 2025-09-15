@@ -89,6 +89,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
 
+    <!-- Spline 3D Viewer -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js"></script>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
@@ -155,9 +158,9 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <h1 class="gradient-text">Freelance Software Developer</h1>
+            <h1 class="gradient-text">👋Hii i am Sachin</h1>
             <p class="hero-subtitle">
-              Transforming Ideas into Exceptional Software Solutions
+              I Transform Ideas into Exceptional Software Solutions
             </p>
             <div class="hero-description">
               <p>
@@ -176,34 +179,11 @@
               </a>
             </div>
           </div>
-          <div class="terminal-container">
-            <div class="terminal contact-terminal">
-              <div class="terminal-header">
-                <div class="terminal-buttons">
-                  <span class="terminal-button close"></span>
-                  <span class="terminal-button minimize"></span>
-                  <span class="terminal-button maximize"></span>
-                </div>
-                <div class="terminal-title">sachin@dev ~</div>
-              </div>
-              <div class="terminal-content">
-                <div class="line">$ <span class="command">whoami</span></div>
-                <div class="line">Full Stack Developer</div>
-                <div class="line">
-                  $ <span class="command">skills.show()</span>
-                </div>
-                <div class="line skill-output">
-                  <span class="highlight">JavaScript</span> •
-                  <span class="highlight">React</span> •
-                  <span class="highlight">Node.js</span> •
-                  <span class="highlight">Python</span> •
-                </div>
-                <div class="line">$ <span class="command">status</span></div>
-                <div class="line">Ready to create amazing things! 🚀</div>
-                <div class="line cursor">$ <span class="blink">█</span></div>
-              </div>
-            </div>
+          
+          <div class="hero-3d-container">
+            <spline-viewer url="https://prod.spline.design/Wr52p2JeXp6Wxt0M/scene.splinecode"></spline-viewer>
           </div>
+
         </div>
       </div>
     </section>
@@ -213,35 +193,21 @@
       <div class="container">
         <h2 class="section-title">About Me</h2>
         <div class="about-wrapper">
-          <div class="about-right">
-            <div class="about-bio">
-              <h3>Full Stack Developer</h3>
-              <p>
-                I am sachin Chaurasiya a Computer Science student specialised in
-                full-stack development with deep experience in building scalable
-                systems and modern web apps ,with knowledge of React.js,
-                Node.js,Psql,next.js and various cloud technologies.
-              </p>
-            </div>
-            <div class="about-stats">
-              <div class="stat-item">
-                <span class="stat-number" data-count="1">0</span>
-                <span class="stat-label">Years Experience</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number" data-count="20">0</span>
-                <span class="stat-label">Projects Completed</span>
-              </div>
-              
-            </div>
-          </div>
           <div class="about-left">
-            <img src="sachin.jpg" alt="Sachin Chaurasiya" class="about-image" />
+            <div class="about-image-container">
+              <img src="sachin.jpg" alt="Sachin Chaurasiya" class="about-image" />
+              <div class="about-image-backdrop"></div>
+              <div class="experience-badge">
+                <span class="exp-number">1</span>
+                <span class="exp-text">Years<br>Experience</span>
+              </div>
+            </div>
             <div class="about-social">
               <a
                 href="https://github.com/Sachinchaurasiya360"
                 target="_blank"
                 class="social-icon"
+                aria-label="GitHub"
               >
                 <i class="fab fa-github"></i>
               </a>
@@ -249,6 +215,7 @@
                 href="https://www.linkedin.com/in/sachinchaurasiya/"
                 target="_blank"
                 class="social-icon"
+                aria-label="LinkedIn"
               >
                 <i class="fab fa-linkedin-in"></i>
               </a>
@@ -256,10 +223,108 @@
                 href="https://twitter.com/sachindev69"
                 target="_blank"
                 class="social-icon"
+                aria-label="Twitter"
               >
                 <i class="fab fa-twitter"></i>
               </a>
             </div>
+          </div>
+          <div class="about-right">
+            <div class="about-tabs">
+              <button class="tab-btn active" data-tab="bio">About</button>
+              <button class="tab-btn" data-tab="education">Education</button>
+              <button class="tab-btn" data-tab="experience">Experience</button>
+            </div>
+            
+            <div class="tab-content active" id="bio">
+              <div class="about-bio">
+                <h3>Full Stack Developer & CS Student</h3>
+                <p>
+                  I am Sachin Chaurasiya, a passionate Computer Science student specialized in
+                  full-stack development with deep experience in building scalable
+                  systems and modern web applications.
+                </p>
+                <p>
+                  My expertise includes React.js, Node.js, PostgreSQL, Next.js, and various cloud 
+                  technologies. I'm dedicated to creating elegant solutions that combine technical 
+                  excellence with outstanding user experiences.
+                </p>
+                <div class="personal-info">
+                  <div class="info-item">
+                    <span class="info-label">Name:</span>
+                    <span class="info-value">Sachin Chaurasiya</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value">sachinchaurasiya@example.com</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Location:</span>
+                    <span class="info-value">India</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Availability:</span>
+                    <span class="info-value availability">Available for hire</span>
+                  </div>
+                </div>
+                <div class="about-cta">
+                  <a href="#contact" class="primary-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Contact Me</span>
+                  </a>
+                  <a href="Sachin_Resume (1).pdf" class="secondary-btn download-cv" download>
+                    <i class="fas fa-download"></i>
+                    <span>Download CV</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="education">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                    <h4>Bachelor of Technology in Computer Science</h4>
+                    <h5>University of Mumbai</h5>
+                    <p class="timeline-date">2022 - 2026</p>
+                    <p>Specialized in algorithms, data structures, and web development with a focus on modern technologies.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                    <h4>HSC</h4>
+                    <h5>SMD College Gopalganj Bihar</h5>
+                    <p class="timeline-date">2020 - 2022</p>
+                    <p>Completed my HSC with first division</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="experience">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-content">
+                    <h4>Full Stack Developer</h4>
+                    <h5>Aaradhay Tech, Mumbai, India</h5>
+                    <p class="timeline-date">June 2024  Aug 2024</p>
+                    <p>Developing scalable web applications using React, Node.js, and PostgreSQL. Working on both frontend and backend aspects of projects.</p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    </div>
           </div>
         </div>
       </div>
@@ -268,111 +333,379 @@
     <section id="skills" class="section skills-section">
       <div class="container">
         <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-container">
-          <!-- Frontend Development -->
-          <div class="skill-category">
-            <div class="skill-header">
-              <i class="fas fa-laptop-code"></i>
-              <h3>Frontend Development</h3>
+        
+        <div class="skills-tabs">
+          <button class="skill-tab-btn active" data-tab="technical">Technical Skills</button>
+          <button class="skill-tab-btn" data-tab="tools">Tools & Platforms</button>
+          <button class="skill-tab-btn" data-tab="soft">Soft Skills</button>
+        </div>
+        
+        <div class="skills-content-wrapper">
+          <!-- Technical Skills Tab -->
+          <div class="skills-tab-content active" id="technical">
+            <div class="skills-overview">
+              <p class="skills-description">
+                As a full-stack developer, I've mastered various technologies across the entire development stack.
+                My technical expertise is focused on building scalable, responsive, and user-friendly applications.
+              </p>
             </div>
-            <div class="skill-grid">
-              <div class="skill-item" data-skill="React">
-                <div class="skill-progress" data-progress="95">
-                  <div class="progress-bar"></div>
+            
+            <div class="skills-grid">
+              <!-- Frontend Category -->
+              <div class="skill-category">
+                <div class="skill-category-header">
+                  <div class="skill-icon-wrapper">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <h3>Frontend</h3>
                 </div>
-                <span>React & Next.js</span>
+                <div class="skills-list">
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">React & Next.js</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Components</span>
+                      <span class="skill-tag">Hooks</span>
+                      <span class="skill-tag">SSR</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">JavaScript/TypeScript</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">ES6+</span>
+                      <span class="skill-tag">Types</span>
+                      <span class="skill-tag">Async</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Tailwind/ShadCN</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">UI</span>
+                      <span class="skill-tag">Components</span>
+                      <span class="skill-tag">Responsive</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">State Management</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Redux</span>
+                      <span class="skill-tag">Context</span>
+                      <span class="skill-tag">Zustand</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="skill-item" data-skill="TypeScript">
-                <div class="skill-progress" data-progress="90">
-                  <div class="progress-bar"></div>
+              
+              <!-- Backend Category -->
+              <div class="skill-category">
+                <div class="skill-category-header">
+                  <div class="skill-icon-wrapper">
+                    <i class="fas fa-server"></i>
+                  </div>
+                  <h3>Backend</h3>
                 </div>
-                <span>JavaScript/TypeScript</span>
+                <div class="skills-list">
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Node.js & Express</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">REST</span>
+                      <span class="skill-tag">Middleware</span>
+                      <span class="skill-tag">APIs</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">MongoDB & PostgreSQL</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">NoSQL</span>
+                      <span class="skill-tag">SQL</span>
+                      <span class="skill-tag">Aggregation</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Web Socket</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Real-time</span>
+                      <span class="skill-tag">Socket.io</span>
+                      <span class="skill-tag">Events</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">ORMs & Prisma</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Prisma</span>
+                      <span class="skill-tag">Sequelize</span>
+                      <span class="skill-tag">TypeORM</span>
+                      <span class="skill-tag">Data Modeling</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="skill-item" data-skill="TailwindCSS">
-                <div class="skill-progress" data-progress="90">
-                  <div class="progress-bar"></div>
+              
+              <!-- DevOps Category -->
+              <div class="skill-category">
+                <div class="skill-category-header">
+                  <div class="skill-icon-wrapper">
+                    <i class="fas fa-cogs"></i>
+                  </div>
+                  <h3>DevOps</h3>
                 </div>
-                <span>Tailwind CSS/ ShadeCn</span>
+                <div class="skills-list">
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">CI/CD Pipelines</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">GitHub Actions</span>
+                      <span class="skill-tag">Jenkins</span>
+                      <span class="skill-tag">Automated Testing</span>
+                      <span class="skill-tag">Deployment</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Docker & Containers</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Docker</span>
+                      <span class="skill-tag">Kubernetes</span>
+                      <span class="skill-tag">Containerization</span>
+                      <span class="skill-tag">Microservices</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Cloud Services</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">AWS</span>
+                      <span class="skill-tag">Azure</span>
+                      <span class="skill-tag">Vercel</span>
+                      <span class="skill-tag">Netlify</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Monitoring & Logging</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">ELK Stack</span>
+                      <span class="skill-tag">Grafana</span>
+                      <span class="skill-tag">Prometheus</span>
+                      <span class="skill-tag">Cloudwatch</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="skill-item" data-skill="State">
-                <div class="skill-progress" data-progress="85">
-                  <div class="progress-bar"></div>
+              
+              <!-- Advanced Tech Category -->
+              <div class="skill-category">
+                <div class="skill-category-header">
+                  <div class="skill-icon-wrapper">
+                    <i class="fas fa-brain"></i>
+                  </div>
+                  <h3>Advanced Technologies</h3>
                 </div>
-                <span>State Management</span>
+                <div class="skills-list">
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Microservices</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Service Architecture</span>
+                      <span class="skill-tag">API Gateway</span>
+                      <span class="skill-tag">Service Discovery</span>
+                      <span class="skill-tag">Load Balancing</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Redis & Caching</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Redis</span>
+                      <span class="skill-tag">In-Memory Caching</span>
+                      <span class="skill-tag">Performance</span>
+                      <span class="skill-tag">Data Store</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Real-time Systems</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">WebSockets</span>
+                      <span class="skill-tag">Event-Driven</span>
+                      <span class="skill-tag">Pub/Sub</span>
+                      <span class="skill-tag">Message Queues</span>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Testing & QA</span>
+                    </div>
+                    <div class="skill-tags">
+                      <span class="skill-tag">Jest</span>
+                      <span class="skill-tag">Cypress</span>
+                      <span class="skill-tag">Unit Testing</span>
+                      <span class="skill-tag">E2E Testing</span>
+                      <span class="skill-tag">TDD</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          <!-- Backend Development -->
-          <div class="skill-category">
-            <div class="skill-header">
-              <i class="fas fa-server"></i>
-              <h3>Backend Development</h3>
-            </div>
-            <div class="skill-grid">
-              <div class="skill-item" data-skill="Node.js">
-                <div class="skill-progress" data-progress="95">
-                  <div class="progress-bar"></div>
-                </div>
-                <span>Node.js & Express</span>
-              </div>
-              <div class="skill-item" data-skill="Databases">
-                <div class="skill-progress" data-progress="90">
-                  <div class="progress-bar"></div>
-                </div>
-                <span>MongoDB & PostgreSQL</span>
-              </div>
-              <div class="skill-item" data-skill="API">
-                <div class="skill-progress" data-progress="85">
-                  <div class="progress-bar"></div>
-                </div>
-                <span>Web Socket</span>
-              </div>
-              <div class="skill-item" data-skill="ORM">
-                <div class="skill-progress" data-progress="85">
-                  <div class="progress-bar"></div>
-                </div>
-                <span>ORMs & Prisma</span>
-              </div>
-            </div>
-          </div>
-
           
-          <div class="skill-category">
-            <div class="skill-header">
-              <i class="fas fa-brain"></i>
-              <h3>Advanced Technologies</h3>
+          <!-- Tools & Platforms Tab -->
+          <div class="skills-tab-content" id="tools">
+            <div class="skills-overview">
+              <p class="skills-description">
+                My proficiency extends to a wide range of development tools, platforms, and environments that enhance my productivity and workflow.
+              </p>
             </div>
-            <div class="skill-grid">
-              <div class="skill-item" data-skill="Microservices">
-                <div class="skill-progress" data-progress="85">
-                  <div class="progress-bar"></div>
+            
+            <div class="tools-grid">
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fab fa-github"></i>
                 </div>
-                <span>Microservices</span>
+                <h4>Git & GitHub</h4>
+                <p>Version control, collaboration, CI/CD integration</p>
               </div>
-              <div class="skill-item" data-skill="Redis">
-                <div class="skill-progress" data-progress="80">
-                  <div class="progress-bar"></div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fab fa-aws"></i>
                 </div>
-                <span>Redis & Caching</span>
+                <h4>AWS</h4>
+                <p>EC2, S3, Lambda, CloudFront deployment</p>
               </div>
-              <div class="skill-item" data-skill="WebSockets">
-                <div class="skill-progress" data-progress="85">
-                  <div class="progress-bar"></div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fab fa-figma"></i>
                 </div>
-                <span>Real-time Systems</span>
+                <h4>Figma</h4>
+                <p>UI/UX design, prototyping, design systems</p>
               </div>
-              <div class="skill-item" data-skill="Testing">
-                <div class="skill-progress" data-progress="85">
-                  <div class="progress-bar"></div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fab fa-jira"></i>
                 </div>
-                <span>Testing & QA</span>
+                <h4>Jira</h4>
+                <p>Project management, agile workflows</p>
+              </div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fas fa-terminal"></i>
+                </div>
+                <h4>VS Code</h4>
+                <p>Primary IDE with custom extensions and workflows</p>
+              </div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <h4>Database Tools</h4>
+                <p>MongoDB Atlas, pgAdmin, Redis Commander</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Soft Skills Tab -->
+          <div class="skills-tab-content" id="soft">
+            <div class="skills-overview">
+              <p class="skills-description">
+                Beyond technical abilities, I pride myself on the soft skills that make me an effective team member and problem-solver.
+              </p>
+            </div>
+            
+            <div class="soft-skills-container">
+              <div class="soft-skill-category">
+                <h3>Communication</h3>
+                <div class="soft-skill-meter">
+                  <div class="meter-fill" style="width: 95%"></div>
+                </div>
+                <ul class="soft-skill-details">
+                  <li>Clear documentation and technical writing</li>
+                  <li>Effective team collaboration and knowledge sharing</li>
+                  <li>Client-facing presentation skills</li>
+                </ul>
+              </div>
+              
+              <div class="soft-skill-category">
+                <h3>Problem Solving</h3>
+                <div class="soft-skill-meter">
+                  <div class="meter-fill" style="width: 90%"></div>
+                </div>
+                <ul class="soft-skill-details">
+                  <li>Analytical and systematic approach to challenges</li>
+                  <li>Creative solutions to complex problems</li>
+                  <li>Efficient debugging and troubleshooting</li>
+                </ul>
+              </div>
+              
+              <div class="soft-skill-category">
+                <h3>Time Management</h3>
+                <div class="soft-skill-meter">
+                  <div class="meter-fill" style="width: 85%"></div>
+                </div>
+                <ul class="soft-skill-details">
+                  <li>Meeting deadlines consistently</li>
+                  <li>Prioritizing tasks effectively</li>
+                  <li>Balancing multiple projects simultaneously</li>
+                </ul>
+              </div>
+              
+              <div class="soft-skill-category">
+                <h3>Adaptability</h3>
+                <div class="soft-skill-meter">
+                  <div class="meter-fill" style="width: 90%"></div>
+                </div>
+                <ul class="soft-skill-details">
+                  <li>Quick learning of new technologies</li>
+                  <li>Embracing changing requirements</li>
+                  <li>Working in various team environments</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
+        
+        <!-- Skills Footer -->
+        <div class="skills-footer">
+          <div class="continuous-learning">
+            <i class="fas fa-graduation-cap"></i>
+            <p>Continuously learning and expanding my skillset with the latest technologies and best practices.</p>
+          </div>
+          <a href="#projects" class="skills-cta">
+            <span>View My Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </section>
+
+    <!-- Projects Section -->
+<section id="projects" class="projects-section">
 
     <!-- Projects Section -->
 <section id="projects" class="projects-section">
@@ -577,45 +910,7 @@
 </section>
 
     <!-- Services Section - New -->
-    <section id="services" class="services-section">
-      <div class="container">
-        <h2 class="section-title">Freelance Services</h2>
-        <div class="services-grid">
-          <div class="service-card" data-aos="fade-up">
-            <div class="service-icon">
-              <i class="fas fa-globe"></i>
-            </div>
-            <h3>Web Development</h3>
-            <p>
-              Custom web applications built with modern technologies.
-              Specializing in React, Node.js, and responsive design.
-            </p>
-            <ul class="service-features">
-              <li>Single Page Applications</li>
-              <li>E-commerce Solutions</li>
-              <li>Progressive Web Apps</li>
-              <li>API Development</li>
-            </ul>
-          </div>
-
-          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3>Full Stack Development</h3>
-            <p>
-              End-to-end development of scalable web applications with focus on:
-            </p>
-            <ul class="service-features">
-              <li>Custom web application development</li>
-              <li>RESTful API design and implementation</li>
-              <li>Database design and optimization</li>
-              <li>Performance optimization and scaling</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- Achievements Section -->
     <!-- Achievements Section -->
@@ -733,104 +1028,128 @@
             </div>
           </div>
           <div class="contact-form-container">
+            <div class="contact-form-header">
+              <h3>Send Me a Message</h3>
+              <p>Have a project in mind? Let's discuss how we can work together.</p>
+            </div>
             <form id="contact-form" class="contact-form">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required />
+              <div class="form-row">
+                <div class="form-group">
+                  <div class="input-with-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-with-icon">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" id="phone" name="phone" placeholder="Contact Number" required />
+                  </div>
+                </div>
               </div>
               <div class="form-group">
-                <label for="email">Contact No</label>
-                <input type="text" id="email" name="email" required />
+                <div class="input-with-icon">
+                  <i class="fas fa-briefcase"></i>
+                  <select id="project-type" name="project-type" required>
+                    <option value="" disabled selected>Select Project Type</option>
+                    <option value="web">Web Development</option>
+                    <option value="mobile">Mobile App</option>
+                    <option value="fullstack">Full Stack Development</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group">
-                <label for="project-type">Project Type</label>
-                <select id="project-type" name="project-type" required>
-                  <option value="">Select Project Type</option>
-                  <option value="web">Web Development</option>
-                  <option value="mobile">Mobile App</option>
-                  <option value="fullstack">Full Stack Development</option>
-                  <option value="other">Other</option>
-                </select>
+                <div class="input-with-icon textarea-icon">
+                  <i class="fas fa-comment-dots"></i>
+                  <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="message">Project Details</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  required
-                ></textarea>
+              <div class="form-footer">
+                <button type="submit" class="submit-btn">
+                  <span>Send Message</span>
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+                <div class="form-note">
+                  <i class="fas fa-shield-alt"></i>
+                  <span>Your information is secure and will never be shared</span>
+                </div>
               </div>
-              <button type="submit" class="submit-btn">Send Message</button>
             </form>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer with Freelance Focus -->
+    <!-- Modern Footer -->
     <footer class="footer">
+      <div class="footer-waves">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path fill="rgba(76, 0, 255, 0.05)" d="M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,202.7C672,213,768,203,864,186.7C960,171,1056,149,1152,154.7C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          <path fill="rgba(0, 204, 255, 0.05)" d="M0,224L48,229.3C96,235,192,245,288,240C384,235,480,213,576,192C672,171,768,149,864,165.3C960,181,1056,235,1152,250.7C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-info">
-            <h3>Sachin Chaurasiya</h3>
-            <p>Freelance Software Developer</p>
-            <p>Building digital solutions that make a difference</p>
-            <div class="social-links">
-              <a
-                href="https://github.com/Sachinchaurasiya360"
-                class="social-link"
-                target="_blank"
-              >
+        <div class="footer-grid">
+          <!-- Brand Column -->
+          <div class="footer-brand">
+            <h2 class="footer-logo">Sachin<span>Chaurasiya</span></h2>
+            <p class="footer-tagline">Bringing ideas to life through code</p>
+            <div class="footer-social">
+              <a href="https://github.com/Sachinchaurasiya360" class="social-icon" target="_blank" aria-label="GitHub">
                 <i class="fab fa-github"></i>
               </a>
-              <a
-                href="https://www.linkedin.com/in/sachinchaurasiya/"
-                class="social-link"
-                target="_blank"
-              >
+              <a href="https://www.linkedin.com/in/sachinchaurasiya/" class="social-icon" target="_blank" aria-label="LinkedIn">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a
-                href="https://twitter.com/sachindev69"
-                class="social-link"
-                target="_blank"
-              >
+              <a href="https://twitter.com/sachindev69" class="social-icon" target="_blank" aria-label="Twitter">
                 <i class="fab fa-twitter"></i>
               </a>
             </div>
           </div>
-          <div class="footer-links">
-            
-            <div class="footer-section">
-              <h4>Connect</h4>
-              <ul>
-                <li>
-                  <a
-                    href="https://github.com/Sachinchaurasiya360"
-                    target="_blank"
-                    >GitHub</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/sachinchaurasiya/"
-                    target="_blank"
-                    >LinkedIn</a
-                  >
-                </li>
-                <li>
-                  <a href="https://twitter.com/sachindev69" target="_blank"
-                    >Twitter</a
-                  >
-                </li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
+          
+          <!-- Navigation Column -->
+          <div class="footer-nav">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          
+          <!-- Services Column -->
+          
+          
+          <!-- Contact Column -->
+          <div class="footer-contact">
+            <h3>Contact Info</h3>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>mrsachinchaurasiya@gmail.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>+91 7070416209</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Mumbai, India</span>
             </div>
           </div>
         </div>
+        
+        <div class="footer-divider"></div>
+        
         <div class="footer-bottom">
-          <p>&copy; 2025 Sachin Chaurasiya. All rights reserved.</p>
+          <p class="copyright">&copy; 2025 Sachin Chaurasiya. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <span class="footer-separator">•</span>
+            <a href="#">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
