@@ -480,7 +480,7 @@ function initContactForm() {
 function setupSplineViewer() {
   const splineViewer = document.querySelector("spline-viewer");
   const splineContainer = document.querySelector(".hero-3d-container");
-  
+
   if (!splineViewer || !splineContainer) {
     console.log("Spline viewer or container not found");
     return;
@@ -488,18 +488,23 @@ function setupSplineViewer() {
 
   // Function to check if device is mobile
   function isMobileDevice() {
-    return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return (
+      window.innerWidth <= 768 ||
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    );
   }
 
   // Function to handle Spline viewer visibility
   function handleSplineVisibility() {
     if (isMobileDevice()) {
       // Hide Spline viewer on mobile devices
-      splineContainer.style.display = 'none';
+      splineContainer.style.display = "none";
       console.log("Mobile device detected, hiding Spline viewer");
     } else {
       // Show Spline viewer on desktop
-      splineContainer.style.display = 'block';
+      splineContainer.style.display = "block";
       console.log("Desktop device detected, showing Spline viewer");
     }
   }
@@ -508,7 +513,7 @@ function setupSplineViewer() {
   handleSplineVisibility();
 
   // Listen for window resize events
-  window.addEventListener('resize', handleSplineVisibility);
+  window.addEventListener("resize", handleSplineVisibility);
 }
 
 // 3D background setup using Three.js
