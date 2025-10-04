@@ -2201,168 +2201,37 @@ spline-viewer {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .about-wrapper {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-    align-items: center;
-    justify-items: center;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .about-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .about-image-container {
-    max-width: 180px;
-    width: 100%;
-    margin: 0 auto var(--space-md);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-
-  .about-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .about-social {
-    margin-top: var(--space-md);
-    justify-content: center;
-  }
-
-  .personal-info {
-    grid-template-columns: 1fr;
-    gap: var(--space-xs);
-    margin: var(--space-lg) 0;
-    text-align: center;
-  }
-
-  .info-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: var(--space-sm);
-    padding: var(--space-xs);
-    background: rgba(255,255,255,0.01);
-    border-radius: var(--border-radius-md);
-  }
-
-  .info-label {
-    margin-right: 0;
-    margin-bottom: var(--space-xxs);
-    color: var(--accent-primary);
-  }
-
-  .about-cta {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-sm);
-    width: 100%;
-    margin-top: var(--space-lg);
-  }
-
-  .about-cta .primary-btn,
-  .about-cta .secondary-btn {
-    width: 100%;
-    max-width: 260px;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .about-tabs {
-    overflow-x: auto;
-    padding-bottom: var(--space-xs);
-    justify-content: center;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    white-space: nowrap;
-    gap: var(--space-xs);
-  }
-  .about-tabs::-webkit-scrollbar {
-    display: none;
-  }
-
-  .tab-btn {
-    padding: var(--space-xs) var(--space-md);
-    font-size: var(--font-size-sm);
-    white-space: nowrap;
-  }
-
-  .about-right {
-    padding: 0 var(--space-xs);
-  }
-
-  .about-bio h3 {
-    font-size: var(--font-size-lg);
-    text-align: center;
-  }
-
-  .about-bio p {
-    text-align: center;
-    font-size: var(--font-size-sm);
-  }
-
-  .about-stats {
+  .form-row {
     grid-template-columns: 1fr;
   }
+}
 
-  .timeline {
-    padding-left: var(--space-md);
-    margin-top: var(--space-md);
-  }
-  .timeline-dot {
-    left: -18px;
-    width: 10px;
-    height: 10px;
-    box-shadow: 0 0 0 2px rgba(58,134,255,0.2);
-  }
-  .timeline-content {
-    padding: var(--space-sm);
-  }
-  .timeline-content h4 {
-    font-size: var(--font-size-sm);
-  }
-  .timeline-content h5 {
-    font-size: var(--font-size-xs);
-  }
-  .timeline-date {
-    font-size: var(--font-size-xxs);
-    padding: var(--space-xxs) var(--space-xs);
-  }
+/* ===== Footer ===== */
+.footer {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    var(--bg-primary) 0%,
+    var(--bg-tertiary) 100%
+  );
+  padding: var(--space-3xl) 0 var(--space-md);
+  margin-top: var(--space-3xl);
+  overflow: hidden;
+}
 
-  .experience-badge {
-    bottom: -10px;
-    right: 50%;
-    transform: translateX(50%);
-    padding: var(--space-xs);
-    flex-direction: row;
-    gap: var(--space-xxs);
-    border-radius: var(--border-radius-full);
-    position: absolute;
-    z-index: 10;
-  }
-  .exp-number {
-    font-size: var(--font-size-md);
-  }
-  .exp-text {
-    font-size: 10px;
-    text-align: left;
-  }
+/* Footer Waves */
+.footer-waves {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.footer-waves svg {
+  width: 100%;
+  height: 80px;
 }
 
 /* Footer Grid */
@@ -2787,11 +2656,8 @@ spline-viewer {
   }
 
   .about-image-container {
-    max-width: 280px;
-    width: 100%;
+    max-width: 350px;
     margin: 0 auto var(--space-xl);
-    display: flex;
-    justify-content: center;
   }
 
   .personal-info {
