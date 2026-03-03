@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git lfs:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git config:*)",
+      "Bash(git add:*)",
+      "Bash(git restore:*)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)"
+    ]
+  }
+}
