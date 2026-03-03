@@ -12,7 +12,7 @@ export const config = {
     },
     about: {
         title: "About Me",
-        description: "Full stack engineer with internship experience at Vizuara AI Labs and Aaradhy Tech, building scalable web applications end-to-end.I work across Node.js, FastAPI, React, Next.js, TypeScript, and Python, with experience deploying systems using Docker, Kubernetes, AWS, MongoDB, and PostgreSQL.Winner of multiple hackathons and project exhibitions. I’ve also led college tech clubs, organized technical initiatives"
+        description: "Full stack engineer with internship experience at Vizuara AI Labs and Aaradhy Tech. I work across Node.js, FastAPI, React, Next.js, TypeScript, and Python, deploying systems with Docker, AWS, and PostgreSQL. Hackathon winner and college tech club lead."
     },
     experiences: [
         {
@@ -50,7 +50,8 @@ export const config = {
             title: "CloudForge",
             category: "Full Stack / DevOps",
             technologies: "TypeScript, React, Express, Redis, Docker, Kubernetes, AWS, WebContainers",
-            image: "/images/cloudforge.png",
+            image: "/sachinActivites/cloudforge.png",
+            tagline: "Build and deploy websites instantly from your browser — like Lovable, but yours to own.",
             description: "A browser-based IDE that allows users to build and deploy websites instantly using an isolated WebContainer. Features a container orchestration pipeline with Docker and Kubernetes for scalable runtime environments, Redis for job queues, session state, and real-time collaboration, plus secure multi-tenant architecture with sandboxing and resource isolation."
         },
         {
@@ -58,7 +59,8 @@ export const config = {
             title: "Automator",
             category: "Full Stack / Automation",
             technologies: "Next.js, TypeScript, PostgreSQL, tRPC, Sentry",
-            image: "/images/automator.png",
+            image: "/sachinActivites/autometor.png",
+            tagline: "Automate your workflows visually with drag-and-drop pipelines — think n8n, simplified.",
             description: "A workflow automation platform enabling users to create event-driven pipelines, connect third-party services, and automate business processes through a visual builder. Built with a scalable backend using PostgreSQL for workflow state management, tRPC for end-to-end type safety, and integrated monitoring with Sentry. Supports task orchestration, webhook triggers, scheduling, and execution queues for real-time and asynchronous automation."
         },
         {
@@ -66,7 +68,8 @@ export const config = {
             title: "CourseFlow",
             category: "Full Stack / EdTech",
             technologies: "React.js, Node.js, TypeScript, MongoDB, WebRTC, TanStack, Zustand",
-            image: "/images/courseflow.png",
+            image: "/sachinActivites/courseflow.png",
+            tagline: "Manage and deliver courses seamlessly with live video-powered classrooms.",
             description: "A scalable course-selling platform supporting students, instructors, and admins with role-based authentication, payment integration, media/content delivery, progress tracking, and real-time analytics dashboards. Features SFU-based real-time interactive teaching assistant sessions enabling multi-peer low-latency classrooms."
         }
     ],

@@ -76,6 +76,7 @@ const Work = () => {
                     <p>{project.category}</p>
                   </div>
                 </div>
+                <p className="work-tagline">{project.tagline}</p>
                 <h4>Tools and features</h4>
                 <p>{project.technologies}</p>
               </div>

@@ -1,4 +1,5 @@
-.techstack-new {
+/* ── Section ── */
+.ts-section {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -6,236 +7,214 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 80px 0;
+  padding: 100px 0;
+  background: #07050a;
 }
 
-/* Video Background */
-.techstack-video-container {
+/* ── Animated background orbs ── */
+.ts-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
-
-.techstack-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Dark Overlay */
-.techstack-overlay {
+.ts-orb {
   position: absolute;
-  top: 0;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  will-change: transform;
+}
+.ts-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+  top: -10%;
+  left: -5%;
+  animation: ts-float-1 14s ease-in-out infinite;
+}
+.ts-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #c084fc 0%, transparent 70%);
+  bottom: -8%;
+  right: -5%;
+  animation: ts-float-2 18s ease-in-out infinite;
+}
+.ts-orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #a78bfa 0%, transparent 70%);
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: ts-float-3 12s ease-in-out infinite;
+}
+
+@keyframes ts-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, 40px) scale(1.1); }
+  66% { transform: translate(-30px, 70px) scale(0.95); }
+}
+@keyframes ts-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-50px, -40px) scale(1.08); }
+  66% { transform: translate(40px, -60px) scale(0.92); }
+}
+@keyframes ts-float-3 {
+  0%, 100% { transform: translateX(-50%) translate(0, 0) scale(1); }
+  50% { transform: translateX(-50%) translate(30px, -40px) scale(1.15); }
+}
+
+/* ── Edge fades ── */
+.ts-fade {
+  position: absolute;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  height: 160px;
   z-index: 1;
+  pointer-events: none;
 }
-
-/* Top gradient fade - blends with Work section above */
-.techstack-video-container::before {
-  content: '';
-  position: absolute;
+.ts-fade-top {
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: linear-gradient(to bottom, #0b080c 0%, transparent 100%);
-  z-index: 2;
-  pointer-events: none;
+  background: linear-gradient(to bottom, var(--backgroundColor) 0%, transparent 100%);
 }
-
-/* Bottom gradient fade - blends with Contact section below */
-.techstack-video-container::after {
-  content: '';
-  position: absolute;
+.ts-fade-bottom {
   bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: linear-gradient(to top, #0b080c 0%, transparent 100%);
-  z-index: 2;
-  pointer-events: none;
+  background: linear-gradient(to top, var(--backgroundColor) 0%, transparent 100%);
 }
 
-/* Content */
-.techstack-content {
+/* ── Content ── */
+.ts-content {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
-.techstack-content h2 {
-  font-size: 70px;
+.ts-heading {
+  font-size: 60px;
   text-align: center;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
-  margin-bottom: 50px;
-  background: linear-gradient(180deg, #ffffff 0%, #c2a4ff 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  letter-spacing: 4px;
+  margin: 0 0 60px 0;
+  color: #fff;
 }
 
-/* Pyramid Container */
-.techstack-pyramid {
+/* ── Grid ── */
+.ts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 16px;
+  justify-items: center;
+}
+
+/* ── Card ── */
+.ts-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-}
-
-/* Each Row */
-.techstack-row {
-  display: flex;
   justify-content: center;
   gap: 10px;
-  flex-wrap: wrap;
-}
-
-/* Tech Item */
-.techstack-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 68px;
-  padding: 8px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
-  text-decoration: none;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 120px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
+  text-decoration: none;
 }
-
-.techstack-item:hover {
-  transform: translateY(-6px) scale(1.08);
+.ts-card:hover {
+  transform: translateY(-8px);
   background: rgba(194, 164, 255, 0.1);
-  border-color: var(--accentColor);
-  box-shadow: 0 8px 30px rgba(194, 164, 255, 0.25);
+  border-color: rgba(194, 164, 255, 0.35);
+  box-shadow: 0 12px 40px rgba(194, 164, 255, 0.2);
 }
 
-.techstack-item img {
-  width: 30px;
-  height: 30px;
+.ts-card img {
+  width: 36px;
+  height: 36px;
   object-fit: contain;
-  filter: grayscale(100%) contrast(1.2) brightness(1.5);
-  opacity: 0.85;
-  transition: filter 0.3s ease, opacity 0.3s ease;
+  filter: grayscale(100%) brightness(1.6);
+  opacity: 0.75;
+  transition: filter 0.35s, opacity 0.35s;
 }
-
-.techstack-item:hover img {
+.ts-card:hover img {
   filter: none;
   opacity: 1;
 }
 
-.techstack-item span {
-  font-size: 9px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 5px;
+.ts-card span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
   text-align: center;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 50px;
+  transition: color 0.35s;
 }
-
-.techstack-item:hover span {
+.ts-card:hover span {
   color: #fff;
 }
 
-/* Responsive */
-@media screen and (max-width: 1200px) {
-  .techstack-content {
-    max-width: 900px;
-  }
-  
-  .techstack-item {
-    width: 50px;
-    height: 62px;
-  }
-  
-  .techstack-item img {
-    width: 26px;
-    height: 26px;
-  }
-  
-  .techstack-item span {
-    font-size: 8px;
-  }
-}
-
+/* ── Responsive ── */
 @media screen and (max-width: 900px) {
-  .techstack-content h2 {
-    font-size: 50px;
-    margin-bottom: 35px;
+  .ts-heading {
+    font-size: 44px;
+    margin-bottom: 44px;
+    letter-spacing: 3px;
   }
-  
-  .techstack-pyramid {
-    gap: 8px;
+  .ts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 12px;
   }
-  
-  .techstack-row {
-    gap: 8px;
+  .ts-card {
+    max-width: 100px;
+    border-radius: 14px;
   }
-  
-  .techstack-item {
-    width: 45px;
-    height: 56px;
-    padding: 6px;
+  .ts-card img {
+    width: 30px;
+    height: 30px;
   }
-  
-  .techstack-item img {
-    width: 22px;
-    height: 22px;
+  .ts-card span {
+    font-size: 10px;
   }
-  
-  .techstack-item span {
-    font-size: 7px;
-    max-width: 42px;
-  }
+  .ts-orb-1 { width: 350px; height: 350px; }
+  .ts-orb-2 { width: 280px; height: 280px; }
+  .ts-orb-3 { width: 200px; height: 200px; }
 }
 
 @media screen and (max-width: 600px) {
-  .techstack-content h2 {
-    font-size: 36px;
+  .ts-section {
+    padding: 70px 0;
   }
-  
-  .techstack-pyramid {
+  .ts-heading {
+    font-size: 32px;
+    margin-bottom: 36px;
+    letter-spacing: 2px;
+  }
+  .ts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 10px;
+  }
+  .ts-card {
+    max-width: 90px;
+    border-radius: 12px;
     gap: 6px;
   }
-  
-  .techstack-row {
-    gap: 6px;
+  .ts-card img {
+    width: 26px;
+    height: 26px;
   }
-  
-  .techstack-item {
-    width: 40px;
-    height: 50px;
-    padding: 5px;
-    border-radius: 8px;
+  .ts-card span {
+    font-size: 9px;
   }
-  
-  .techstack-item img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .techstack-item span {
-    font-size: 6px;
-    max-width: 38px;
-    margin-top: 3px;
-  }
+  .ts-orb-1 { width: 250px; height: 250px; filter: blur(80px); }
+  .ts-orb-2 { width: 200px; height: 200px; filter: blur(80px); }
+  .ts-orb-3 { width: 150px; height: 150px; filter: blur(80px); }
 }
