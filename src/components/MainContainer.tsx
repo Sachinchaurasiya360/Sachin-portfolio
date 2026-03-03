@@ -8,7 +8,9 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
+import Activities from "./Activities";
 import TechStackNew from "./TechStackNew";
+import Writing from "./Writing";
 import CallToAction from "./CallToAction";
 import setSplitText from "./utils/splitText";
 
@@ -42,6 +44,8 @@ const MainContainer = ({ children }: PropsWithChildren) => {
         <WhatIDo />
         <Career />
         <Work />
+        <Activities />
+        <Writing />
         <TechStackNew />
         <CallToAction />
         <Contact />

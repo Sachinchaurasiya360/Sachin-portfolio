@@ -1,142 +1,215 @@
 .myworks-page {
   min-height: 100vh;
   background-color: var(--backgroundColor);
-  padding: 80px 40px;
+  padding: 0 60px 80px;
   box-sizing: border-box;
 }
 
-.myworks-header {
-  text-align: center;
-  margin-bottom: 60px;
+/* Nav */
+.myworks-nav {
+  padding: 30px 0;
 }
-
-.back-button {
-  display: inline-block;
-  color: var(--accentColor);
-  text-decoration: none;
-  font-size: 16px;
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
-  padding: 10px 20px;
-  border: 1px solid var(--accentColor);
-  border-radius: 30px;
-}
-
-.back-button:hover {
-  background: var(--accentColor);
-  color: #000;
-}
-
-.myworks-header h1 {
-  font-size: 70px;
-  font-weight: 500;
-  margin-bottom: 15px;
-  color: #fff;
-}
-
-.myworks-header h1 span {
-  color: var(--accentColor);
-}
-
-.myworks-header p {
-  font-size: 18px;
+.myworks-back {
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s;
+  letter-spacing: 0.5px;
 }
-
-.myworks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 30px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.myworks-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.myworks-card:hover {
-  transform: translateY(-10px);
-  border-color: var(--accentColor);
-  box-shadow: 0 20px 40px rgba(194, 164, 255, 0.15);
-}
-
-.myworks-card-number {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  font-size: 14px;
+.myworks-back:hover {
   color: var(--accentColor);
+}
+
+/* Hero */
+.myworks-hero {
+  text-align: left;
+  padding: 60px 0 80px;
+}
+.myworks-hero h1 {
+  font-size: 80px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  color: #fff;
+  line-height: 1;
+}
+.myworks-hero h1 span {
+  color: var(--accentColor);
+}
+.myworks-hero p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Project list */
+.myworks-list {
+  max-width: 1200px;
+}
+
+.myworks-item {
+  margin-bottom: 20px;
+}
+
+.myworks-item-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.myworks-number {
+  font-size: 14px;
   font-weight: 600;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 5px 12px;
-  border-radius: 20px;
-  z-index: 1;
+  color: var(--accentColor);
+}
+.myworks-category {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.myworks-card-image {
-  width: 100%;
-  height: 220px;
+.myworks-item-body {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.myworks-item-visual {
+  flex-shrink: 0;
+  width: 420px;
+  height: 280px;
+  border-radius: 10px;
   overflow: hidden;
+  background: #111;
 }
-
-.myworks-card-image img {
+.myworks-item-visual img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
+}
+.myworks-item:hover .myworks-item-visual img {
+  transform: scale(1.04);
 }
 
-.myworks-card:hover .myworks-card-image img {
-  transform: scale(1.05);
+.myworks-item-info {
+  flex: 1;
+  padding-top: 8px;
 }
-
-.myworks-card-info {
-  padding: 25px;
-}
-
-.myworks-card-info h3 {
-  font-size: 20px;
+.myworks-item-info h2 {
+  font-size: 32px;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin: 0 0 16px 0;
   color: #fff;
+  transition: color 0.3s;
 }
-
-.myworks-card-category {
-  font-size: 14px;
+.myworks-item:hover .myworks-item-info h2 {
   color: var(--accentColor);
-  margin-bottom: 12px;
+}
+.myworks-desc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin: 0 0 24px 0;
+}
+.myworks-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.myworks-tech-tag {
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.3px;
 }
 
-.myworks-card-description {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.6;
-  margin-bottom: 15px;
+.myworks-item-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-top: 40px;
 }
 
-.myworks-card-tech {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
-  line-height: 1.5;
+/* Alternate layout: even items flip image to right */
+.myworks-item:nth-child(even) .myworks-item-body {
+  flex-direction: row-reverse;
+}
+
+/* Footer CTA */
+.myworks-footer {
+  padding: 80px 0 40px;
+  text-align: center;
+}
+.myworks-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  color: var(--accentColor);
+  border: 1px solid var(--accentColor);
+  padding: 14px 36px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+.myworks-cta:hover {
+  background: var(--accentColor);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(194, 164, 255, 0.3);
 }
 
 /* Responsive */
+@media only screen and (max-width: 1024px) {
+  .myworks-item-visual {
+    width: 340px;
+    height: 230px;
+  }
+  .myworks-item-info h2 {
+    font-size: 26px;
+  }
+  .myworks-hero h1 {
+    font-size: 60px;
+  }
+}
 @media only screen and (max-width: 768px) {
   .myworks-page {
-    padding: 60px 20px;
+    padding: 0 20px 60px;
   }
-
-  .myworks-header h1 {
-    font-size: 45px;
+  .myworks-hero {
+    padding: 40px 0 50px;
   }
-
-  .myworks-grid {
-    grid-template-columns: 1fr;
+  .myworks-hero h1 {
+    font-size: 42px;
+  }
+  .myworks-hero p {
+    font-size: 15px;
+  }
+  .myworks-item-body {
+    flex-direction: column !important;
+    gap: 20px;
+  }
+  .myworks-item-visual {
+    width: 100%;
+    height: 220px;
+  }
+  .myworks-item-info h2 {
+    font-size: 22px;
+  }
+  .myworks-desc {
+    font-size: 14px;
+  }
+  .myworks-item-line {
+    margin-top: 30px;
+  }
+  .myworks-footer {
+    padding: 50px 0 30px;
+  }
+  .myworks-cta {
+    font-size: 16px;
+    padding: 12px 28px;
   }
 }

@@ -1,4 +1,4 @@
-import { MdArrowOutward, MdCopyright } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 import "./styles/Contact.css";
 import { config } from "../config";
 import gsap from "gsap";
@@ -18,100 +18,91 @@ const Contact = () => {
       },
     });
 
-    // Animate title from bottom
     contactTimeline.fromTo(
-      ".contact-section h3",
-      {
-        opacity: 0,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      }
+      ".contact-heading",
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
     );
 
-    // Animate contact boxes with stagger from bottom
     contactTimeline.fromTo(
-      ".contact-box",
-      {
-        opacity: 0,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: "power3.out",
-      },
+      ".contact-email",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
       "-=0.4"
     );
 
-    // Clean up
+    contactTimeline.fromTo(
+      ".contact-social-link",
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power3.out" },
+      "-=0.3"
+    );
+
+    contactTimeline.fromTo(
+      ".contact-bottom",
+      { opacity: 0 },
+      { opacity: 1, duration: 0.6, ease: "power3.out" },
+      "-=0.2"
+    );
+
     return () => {
       contactTimeline.kill();
     };
   }, []);
 
   return (
-    <div className="contact-section section-container" id="contact">
+    <footer className="contact-section section-container" id="contact">
       <div className="contact-container">
-        <h3>{config.developer.fullName}</h3>
-        <div className="contact-flex">
-          <div className="contact-box">
-            <h4>Email</h4>
-            <p>
-              <a href={`mailto:${config.contact.email}`} data-cursor="disable">
-                {config.contact.email}
-              </a>
-            </p>
-            <h4>Location</h4>
-            <p>
-              <span>{config.social.location}</span>
-            </p>
-          </div>
-          <div className="contact-box">
-            <h4>Social</h4>
-            <a
-              href={config.contact.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Github <MdArrowOutward />
-            </a>
-            <a
-              href={config.contact.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Linkedin <MdArrowOutward />
-            </a>
-            <a
-              href={config.contact.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Twitter <MdArrowOutward />
-            </a>
-          </div>
-          <div className="contact-box">
-            
-            <h5>
-              <MdCopyright /> {new Date().getFullYear()}
-            </h5>
-          </div>
+        <div className="contact-top-line"></div>
+
+        <h3 className="contact-heading">Let's Connect</h3>
+
+        <a
+          href={`mailto:${config.contact.email}`}
+          className="contact-email"
+          data-cursor="disable"
+        >
+          {config.contact.email}
+        </a>
+
+        <div className="contact-socials">
+          <a
+            href={config.contact.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor="disable"
+            className="contact-social-link"
+          >
+            Github <MdArrowOutward />
+          </a>
+          <a
+            href={config.contact.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor="disable"
+            className="contact-social-link"
+          >
+            Linkedin <MdArrowOutward />
+          </a>
+          <a
+            href={config.contact.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor="disable"
+            className="contact-social-link"
+          >
+            Twitter <MdArrowOutward />
+          </a>
+        </div>
+
+        <div className="contact-divider"></div>
+
+        <div className="contact-bottom">
+          <span>&copy; {new Date().getFullYear()} {config.developer.fullName}</span>
+          <span>{config.social.location}</span>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

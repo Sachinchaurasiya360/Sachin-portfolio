@@ -1,0 +1,236 @@
+.activities-section {
+  height: 100vh;
+  box-sizing: border-box;
+  will-change: transform;
+  background-color: var(--backgroundColor);
+  overflow: hidden;
+}
+.activities-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.activities-section h2 {
+  margin-top: 80px;
+  margin-bottom: 8px;
+  font-size: 60px;
+  font-weight: 500;
+}
+.activities-section h2 > span {
+  color: var(--accentColor);
+}
+.activities-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 30px 0;
+  letter-spacing: 0.5px;
+}
+.activities-track {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+.activity-card {
+  flex-shrink: 0;
+  width: 380px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-right: 1px solid #262626;
+}
+.activity-image-wrapper {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111;
+}
+.activity-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.activity-card:hover .activity-image-wrapper img {
+  transform: scale(1.05);
+}
+.activity-caption {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+}
+
+/* Top & bottom border lines */
+.activities-track::before,
+.activities-track::after {
+  content: "";
+  width: 50000vw;
+  height: 1px;
+  background-color: #262626;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.activities-track::after {
+  top: auto;
+  bottom: 0;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: lightbox-fade-in 0.25s ease;
+}
+@keyframes lightbox-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 100000;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.lightbox-close:hover {
+  opacity: 1;
+}
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: lightbox-scale-in 0.3s ease;
+}
+@keyframes lightbox-scale-in {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.lightbox-caption {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Responsive */
+@media only screen and (max-height: 900px) {
+  .activities-section h2 {
+    font-size: 50px;
+    margin-top: 60px;
+  }
+  .activity-image-wrapper {
+    height: 240px;
+  }
+  .activity-card {
+    width: 320px;
+    padding: 15px 20px;
+  }
+}
+@media only screen and (max-height: 700px) {
+  .activities-section h2 {
+    font-size: 40px;
+    margin-top: 40px;
+    margin-bottom: 5px;
+  }
+  .activities-subtitle {
+    margin-bottom: 15px;
+  }
+  .activity-image-wrapper {
+    height: 200px;
+  }
+  .activity-card {
+    width: 280px;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .activity-card {
+    width: 320px;
+    padding: 18px 20px;
+  }
+  .activity-image-wrapper {
+    height: 260px;
+  }
+  .activities-section h2 {
+    font-size: 50px;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+  .activities-section {
+    height: auto;
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+  .activities-section h2 {
+    font-size: 32px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+  }
+  .activities-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .activities-track {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    height: auto;
+  }
+  .activities-track::before,
+  .activities-track::after {
+    display: none;
+  }
+  .activity-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15px;
+    border-right: none;
+    border-bottom: 1px solid #262626;
+  }
+  .activity-image-wrapper {
+    height: 220px;
+  }
+  .lightbox-content img {
+    max-height: 60vh;
+  }
+  .lightbox-caption {
+    font-size: 14px;
+  }
+}

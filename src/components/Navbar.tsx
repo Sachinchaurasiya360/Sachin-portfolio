@@ -4,6 +4,7 @@ import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import Lenis from "lenis";
 import "./styles/Navbar.css";
+import { config } from "../config";
 
 gsap.registerPlugin(ScrollTrigger);
 export let lenis: Lenis | null = null;
@@ -63,34 +64,39 @@ const Navbar = () => {
       lenis?.destroy();
     };
   }, []);
+
   return (
     <>
       <div className="header">
-        
+        <span className="navbar-name">{config.developer.fullName}</span>
+
+        <nav className="navbar-pill">
+          <ul>
+            <li>
+              <a data-href="#about" href="#about">
+                <HoverLinks text="ABOUT" />
+              </a>
+            </li>
+            <li>
+              <a data-href="#work" href="#work">
+                <HoverLinks text="WORK" />
+              </a>
+            </li>
+            <li>
+              <a data-href="#contact" href="#contact">
+                <HoverLinks text="CONTACT" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+
         <a
-          href="mailto:mrsachinchaurasiya@gmail.com"
+          href={`mailto:${config.contact.email}`}
           className="navbar-connect"
           data-cursor="disable"
         >
-          mrsachinchaurasiya@gmail.com
+          Say Hello
         </a>
-        <ul>
-          <li>
-            <a data-href="#about" href="#about">
-              <HoverLinks text="ABOUT" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#work" href="#work">
-              <HoverLinks text="WORK" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#contact" href="#contact">
-              <HoverLinks text="CONTACT" />
-            </a>
-          </li>
-        </ul>
       </div>
 
       <div className="landing-circle1"></div>

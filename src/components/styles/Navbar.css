@@ -3,7 +3,8 @@
   max-width: var(--cMaxWidth);
   width: var(--cWidth);
   justify-content: space-between;
-  padding: 15px 0px;
+  align-items: center;
+  padding: 16px 0;
   margin-bottom: -80px;
   box-sizing: border-box;
   position: fixed;
@@ -12,72 +13,125 @@
   top: 0;
   z-index: 9999;
 }
-.header ul {
-  font-size: 11px;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  column-gap: 20px;
-  row-gap: 6px;
-  align-items: end;
-}
-.header ul li {
-  margin-left: 0px;
-  letter-spacing: 0.8px;
-  color: #ccc;
+
+/* Name on the left */
+.navbar-name {
+  font-size: 14px;
   font-weight: 600;
-  cursor: pointer;
+  letter-spacing: 0.5px;
+  color: #eae5ec;
+  white-space: nowrap;
 }
-.navbar-connect {
+
+/* Centered pill nav */
+.navbar-pill {
   position: absolute;
-  display: none;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+.navbar-pill ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 8px;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 40px;
+}
+.navbar-pill ul li {
+  cursor: pointer;
+}
+.navbar-pill ul li a {
+  display: block;
+  padding: 7px 18px;
   font-size: 13px;
-  letter-spacing: 0.8px;
   font-weight: 500;
+  letter-spacing: 1.2px;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+  transition: all 0.3s ease;
 }
-.navbar-title {
-  font-weight: 700;
+.navbar-pill ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Say Hello button on the right */
+.navbar-connect {
   font-size: 13px;
-  letter-spacing: 0.2px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  color: var(--accentColor);
+  border: 1px solid rgba(194, 164, 255, 0.3);
+  padding: 7px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
-@media only screen and (min-width: 500px) {
-  .header {
-    padding: 20px 0px;
-  }
-  .header ul {
-    flex-direction: row;
-    align-items: center;
-    font-size: 14px;
-  }
-  .header ul li {
-    color: #eae5ec;
-  }
-  .navbar-title {
-    font-size: 16px;
-  }
+.navbar-connect:hover {
+  background: var(--accentColor);
+  color: #000;
 }
-@media only screen and (min-width: 900px) {
+
+/* Mobile: stack vertically */
+@media only screen and (max-width: 599px) {
+  .navbar-name {
+    font-size: 13px;
+  }
+  .navbar-pill {
+    position: static;
+    transform: none;
+  }
+  .navbar-pill ul {
+    gap: 2px;
+    padding: 4px 6px;
+  }
+  .navbar-pill ul li a {
+    padding: 5px 10px;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
   .navbar-connect {
-    display: block;
+    display: none;
   }
 }
+
+@media only screen and (min-width: 600px) {
+  .header {
+    padding: 20px 0;
+  }
+  .navbar-name {
+    font-size: 15px;
+  }
+  .navbar-pill ul li a {
+    font-size: 13px;
+    padding: 8px 20px;
+  }
+}
+
 @media only screen and (min-width: 1200px) {
   .header {
-    padding: 35px 0px;
+    padding: 30px 0;
   }
-  .header ul {
-    column-gap: 80px;
+  .navbar-name {
     font-size: 16px;
+  }
+  .navbar-pill ul {
+    gap: 4px;
+    padding: 7px 10px;
+  }
+  .navbar-pill ul li a {
+    font-size: 14px;
+    padding: 8px 24px;
+    letter-spacing: 1.5px;
   }
   .navbar-connect {
-    font-size: 16px;
-  }
-  .navbar-title {
-    font-size: 18px;
+    font-size: 14px;
+    padding: 9px 24px;
   }
 }

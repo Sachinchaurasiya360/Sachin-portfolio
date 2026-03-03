@@ -6,9 +6,7 @@ const CallToAction = () => {
     <div className="cta-section">
       <div className="cta-buttons">
         <a
-          href={config.contact.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={`mailto:${config.contact.email}`}
           className="cta-btn cta-btn-hire"
           data-cursor="disable"
         >

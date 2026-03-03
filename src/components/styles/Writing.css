@@ -1,0 +1,124 @@
+.writing-section {
+  padding: 100px 0;
+  margin: auto;
+  background-color: var(--backgroundColor);
+}
+.writing-section h2 {
+  font-size: 60px;
+  font-weight: 500;
+  margin: 0 0 50px 0;
+}
+.writing-section h2 > span {
+  color: var(--accentColor);
+}
+.writing-list {
+  display: flex;
+  flex-direction: column;
+}
+.writing-article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.writing-article:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.writing-article:hover {
+  padding-left: 16px;
+  border-color: var(--accentColor);
+}
+.writing-article:hover h3 {
+  color: var(--accentColor);
+}
+.writing-article-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+.writing-tag {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accentColor);
+  background: rgba(194, 164, 255, 0.1);
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+.writing-article h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  transition: color 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.writing-arrow {
+  flex-shrink: 0;
+  font-size: 22px;
+  opacity: 0.4;
+  transition: all 0.3s;
+  margin-left: 20px;
+}
+.writing-article:hover .writing-arrow {
+  opacity: 1;
+  color: var(--accentColor);
+  transform: translate(3px, -3px);
+}
+.writing-more {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 16px;
+  color: var(--accentColor);
+  transition: opacity 0.3s;
+  letter-spacing: 0.5px;
+}
+.writing-more:hover {
+  opacity: 0.7;
+  color: var(--accentColor);
+}
+
+@media only screen and (max-width: 900px) {
+  .writing-section h2 {
+    font-size: 45px;
+  }
+  .writing-article h3 {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .writing-section {
+    padding: 60px 0;
+  }
+  .writing-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  .writing-article {
+    padding: 20px 0;
+  }
+  .writing-article-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .writing-article h3 {
+    font-size: 15px;
+    white-space: normal;
+  }
+  .writing-tag {
+    font-size: 11px;
+  }
+  .writing-more {
+    font-size: 14px;
+  }
+}
