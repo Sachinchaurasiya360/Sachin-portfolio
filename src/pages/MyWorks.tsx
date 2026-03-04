@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom";
 import { config } from "../config";
 import { MdArrowOutward } from "react-icons/md";
+import { useEffect } from "react";
 import "./MyWorks.css";
 
 const MyWorks = () => {
+  useEffect(() => {
+    document.body.style.overflow = "auto";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
     <div className="myworks-page">
       <div className="myworks-nav">

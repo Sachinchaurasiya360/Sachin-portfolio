@@ -78,23 +78,31 @@
   color: #000;
 }
 
-/* Mobile: stack vertically */
+/* Mobile: compact layout */
 @media only screen and (max-width: 599px) {
+  .header {
+    width: calc(100% - 24px);
+    padding: 10px 0;
+    gap: 8px;
+  }
   .navbar-name {
-    font-size: 13px;
+    font-size: 12px;
+    flex-shrink: 0;
   }
   .navbar-pill {
     position: static;
     transform: none;
+    flex-shrink: 1;
+    min-width: 0;
   }
   .navbar-pill ul {
     gap: 2px;
-    padding: 4px 6px;
+    padding: 4px 5px;
   }
   .navbar-pill ul li a {
-    padding: 5px 10px;
-    font-size: 11px;
-    letter-spacing: 0.8px;
+    padding: 5px 8px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
   }
   .navbar-connect {
     display: none;

@@ -81,10 +81,10 @@ export const config = {
     },
     skills: {
         develop: {
-            title: "AI DEVELOPER",
+            title: "GenAI DEVELOPER",
             description: "Building intelligent systems & AI solutions",
-            details: "Developing AI agents, chatbots, and machine learning models using Python, TensorFlow, and PyTorch. Specializing in LLMs, NLP, deep learning, and autonomous systems.",
-            tools: ["Python", "TensorFlow", "PyTorch", "OpenCV", "Scikit-learn", "LLMs", "NLP", "Deep Learning", "Chatbots", "AI Agents"]
+            details: "Developing AI agents and chatbots. Specializing in LLMs, NLP and autonomous systems.",
+            tools: ["Python", "GeminiApi", "OpenAI", "LLMs", "Memory in AI", "Voice Agents ", "Chatbots", "AI Agents"]
         },
         design: {
             title: "FULL-STACK",

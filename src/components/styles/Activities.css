@@ -41,6 +41,7 @@
   flex-direction: column;
   gap: 14px;
   border-right: 1px solid #262626;
+  box-sizing: border-box;
 }
 .activity-image-wrapper {
   width: 100%;
@@ -196,7 +197,7 @@
   .activities-section {
     height: auto;
     min-height: auto;
-    padding-bottom: 40px;
+    padding: 0 15px 40px;
   }
   .activities-section h2 {
     font-size: 32px;
@@ -220,12 +221,16 @@
   .activity-card {
     width: 100%;
     max-width: 100%;
-    padding: 20px 15px;
+    padding: 16px 0;
     border-right: none;
     border-bottom: 1px solid #262626;
   }
   .activity-image-wrapper {
     height: 220px;
+    border-radius: 8px;
+  }
+  .activity-image-wrapper img {
+    border-radius: 8px;
   }
   .lightbox-content img {
     max-height: 60vh;
