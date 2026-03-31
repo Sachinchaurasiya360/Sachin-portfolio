@@ -45,30 +45,24 @@ const Career = () => {
         <div className="career-list">
           {config.experiences.map((exp, index) => (
             <div key={index} className="career-card">
-              <div className="career-card-left">
-                <span className="career-period">{exp.period}</span>
-                <span className="career-location">{exp.location}</span>
-              </div>
-
-              <div className="career-card-accent"></div>
-
-              <div className="career-card-right">
-                <div className="career-card-header">
+              <div className="career-card-glow"></div>
+              <div className="career-card-top">
+                <div className="career-card-role">
                   <h3>{exp.position}</h3>
                   <span className="career-company">{exp.company}</span>
                 </div>
-
-                <ul className="career-responsibilities">
-                  {exp.responsibilities.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-
-                <div className="career-tech-tags">
-                  {exp.technologies.map((tech, i) => (
-                    <span key={i} className="career-tech-tag">{tech}</span>
-                  ))}
+                <div className="career-card-meta">
+                  <span className="career-period">{exp.period}</span>
+                  <span className="career-location">{exp.location}</span>
                 </div>
+              </div>
+
+              <p className="career-desc">{exp.description}</p>
+
+              <div className="career-tech-tags">
+                {exp.technologies.map((tech, i) => (
+                  <span key={i} className="career-tech-tag">{tech}</span>
+                ))}
               </div>
             </div>
           ))}

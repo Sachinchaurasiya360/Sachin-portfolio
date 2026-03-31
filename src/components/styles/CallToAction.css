@@ -3,8 +3,45 @@
   padding: 80px 20px;
   background-color: var(--backgroundColor);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.cta-heading {
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.cta-subtext {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 500px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cta-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.cta-service-tag {
+  font-size: 13px;
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(194, 164, 255, 0.08);
+  border: 1px solid rgba(194, 164, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.3px;
 }
 
 .cta-buttons {
@@ -12,30 +49,19 @@
   justify-content: center;
   gap: 25px;
   flex-wrap: wrap;
+  margin-top: 8px;
 }
 
 .cta-btn {
   display: inline-flex;
   align-items: center;
-  padding: 14px 32px;
-  font-size: 15px;
+  padding: 14px 36px;
+  font-size: 16px;
   font-weight: 500;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 30px;
   transition: all 0.3s ease;
   letter-spacing: 0.3px;
-}
-
-.cta-btn-play {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.cta-btn-play:hover {
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
 }
 
 .cta-btn-hire {
@@ -45,7 +71,7 @@
 }
 
 .cta-btn-hire:hover {
-  box-shadow: 0 8px 30px rgba(194, 164, 255, 0.35);
+  box-shadow: 0 10px 30px rgba(194, 164, 255, 0.4);
   transform: translateY(-2px);
 }
 
@@ -53,15 +79,24 @@
 @media only screen and (max-width: 768px) {
   .cta-section {
     padding: 60px 20px;
+    gap: 16px;
   }
 
-  .cta-buttons {
-    flex-direction: column;
-    gap: 15px;
+  .cta-heading {
+    font-size: 28px;
+  }
+
+  .cta-subtext {
+    font-size: 14px;
+  }
+
+  .cta-service-tag {
+    font-size: 12px;
+    padding: 5px 14px;
   }
 
   .cta-btn {
-    justify-content: center;
     padding: 12px 28px;
+    font-size: 15px;
   }
 }

@@ -24,7 +24,14 @@
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 3px;
-  margin: 0 0 30px 0;
+  margin: 0 0 14px 0;
+}
+.contact-subtext {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+  max-width: 500px;
 }
 .contact-email {
   display: inline-block;

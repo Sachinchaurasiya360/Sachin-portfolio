@@ -55,10 +55,13 @@ const Contact = () => {
       <div className="contact-container">
         <div className="contact-top-line"></div>
 
-        <h3 className="contact-heading">Let's Connect</h3>
+        <h3 className="contact-heading">Let's Work Together</h3>
+        <p className="contact-subtext">
+          Have a project in mind? I'm available for freelance work — from full-stack web apps to AI-powered solutions.
+        </p>
 
         <a
-          href={`mailto:${config.contact.email}`}
+          href={`mailto:${config.contact.email}?subject=Freelance%20Inquiry`}
           className="contact-email"
           data-cursor="disable"
         >

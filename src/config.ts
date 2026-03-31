@@ -2,8 +2,8 @@ export const config = {
     developer: {
         name: "Sachin",
         fullName: "Sachin Chaurasiya",
-        title: "AI & Full-Stack Developer",
-        description: "AI & Full-Stack Developer building intelligent systems and modern web applications. Passionate about machine learning, deep learning, and creating next-gen autonomous agents."
+        title: "Freelance Full-Stack Developer",
+        description: "Freelance Full-Stack Developer building scalable web apps, APIs, and backend systems. Available for hire."
     },
     social: {
         github: "sachinchaurasiya360",
