@@ -1,4 +1,5 @@
 import { MdArrowOutward } from "react-icons/md";
+import { FiCalendar } from "react-icons/fi";
 import "./styles/Contact.css";
 import { config } from "../config";
 import gsap from "gsap";
@@ -29,6 +30,13 @@ const Contact = () => {
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
       "-=0.4"
+    );
+
+    contactTimeline.fromTo(
+      ".contact-book-call",
+      { opacity: 0, y: 24 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+      "-=0.35"
     );
 
     contactTimeline.fromTo(
@@ -67,6 +75,18 @@ const Contact = () => {
         >
           {config.contact.email}
         </a>
+
+        <div className="contact-cta-row">
+          <a
+            href={config.contact.calendly}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-book-call"
+            data-cursor="disable"
+          >
+            <FiCalendar /> Book a 30-min Call
+          </a>
+        </div>
 
         <div className="contact-socials">
           <a

@@ -106,6 +106,7 @@ export const config = {
         github: "https://github.com/sachinchaurasiya360",
         linkedin: "https://www.linkedin.com/in/sachinchaurasiya/",
         twitter: "https://x.com/sachindev69",
+        calendly: "https://calendly.com/mrsachinchaurasiya/30min",
     },
     skills: {
         develop: {
