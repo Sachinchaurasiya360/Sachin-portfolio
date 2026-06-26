@@ -65,10 +65,12 @@ const Scene = () => {
           headBone = character.getObjectByName("spine006") || null;
           screenLight = character.getObjectByName("screenlight") || null;
           progress.loaded().then(() => {
+            // Begin the intro as the loading screen starts fading out
+            // (kept in sync with Loading.tsx exit timing).
             setTimeout(() => {
               light.turnOnLights();
               animations.startIntro();
-            }, 2500);
+            }, 1000);
           });
           window.addEventListener("resize", () =>
             handleResize(renderer, camera, canvasDiv, character)

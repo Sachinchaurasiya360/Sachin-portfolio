@@ -8,67 +8,67 @@ gsap.registerPlugin(ScrollTrigger);
 const activities = [
   {
     image: "/sachinActivites/IMG-20250916-WA0026.jpg",
-    caption: "Guiding students for the Smart India Hackathon",
+    caption: "Guiding students through the Smart India Hackathon",
   },
   {
     image: "/sachinActivites/IMG-20250923-WA0035.jpg",
-    caption: "Talk on the github universe and open-source contributions",
+    caption: "Speaking on GitHub and the world of open source",
   },
   {
     image: "/sachinActivites/IMG-20250924-WA0134.jpg",
-    caption: "Giving a talk on the linkeldn universe and personal branding",
+    caption: "Talk on LinkedIn, networking, and personal branding",
   },
   {
     image: "/sachinActivites/IMG_20241213_144432.jpg",
-    caption: "In the smart india hackathon grand finale ",
+    caption: "At the Smart India Hackathon grand finale",
   },
   {
     image: "/sachinActivites/IMG-20250123-WA0005.jpg",
-    caption: "Served as the Technical secretary for the college for the year 202-25",
+    caption: "Technical Secretary of the college, 2024–25",
   },
   {
     image: "/sachinActivites/IMG-20250311-WA0030.jpg",
-    caption: "Winning the first prize at a national level coding hackathon",
+    caption: "First prize at a national-level coding hackathon",
   },
   {
     image: "/sachinActivites/IMG-20240418-WA0023.jpg",
-    caption: "Served as the TPO Co-Head for the college for the year 2024-25",
+    caption: "TPO Co-Head of the college, 2024–25",
   },
   {
     image: "/sachinActivites/IMG-20241003-WA0027.jpg",
-    caption: "Giving a talk on the Web development",
+    caption: "Leading a session on web development",
   },
   {
     image: "/sachinActivites/codeautometa.png",
-    caption: "Mentoring student at a Hackathon ",
+    caption: "Mentoring student teams at a hackathon",
   },
   {
     image: "/sachinActivites/IMG-20240807-WA0001.jpg",
-    caption: "Explaining the importance of AI",
+    caption: "Sharing why AI matters and how to use it",
   },
   {
     image: "/sachinActivites/IMG-20240221-WA0013.jpg",
-    caption: "Giving a talk on the Hackathon",
+    caption: "Addressing participants at a hackathon",
   },
   {
     image: "/sachinActivites/IMG-20231103-WA0014.jpg",
-    caption: "After winning the College level project competition",
+    caption: "Winning the college-level project competition",
   },
   {
     image: "/sachinActivites/IMG-20251001-WA0040.jpg",
-    caption: "Taking Charge as the TPO-Head for the college for the year 2025-26",
+    caption: "Taking charge as TPO Head of the college, 2025–26",
   },
   {
     image: "/sachinActivites/IMG-20260207-WA0031.jpg",
-    caption: "Giving a talk to class 10 students how to use AI tools for their studies",
+    caption: "Showing class 10 students how to use AI tools for studying",
   },
   {
     image: "/sachinActivites/1679741730233_1679741722993.jpg",
-    caption: "Giving a thanksgiving to trainers",
+    caption: "A heartfelt thank-you to the trainers who shaped the journey",
   },
   {
     image: "/sachinActivites/Screenshot_2022-10-14-18-15-01-466_com.mxtech.videoplayer.ad.jpg",
-    caption: "Giving a talk on the Blockchain universe and its applications",
+    caption: "Talk on blockchain and its real-world applications",
   },
 ];
 
@@ -147,7 +147,8 @@ const Activities = () => {
           Beyond <span>Code</span>
         </h2>
         <p className="activities-subtitle">
-          Leading clubs, organizing events, giving talks & mentoring teams
+          When I'm not building, I'm leading campus tech communities, mentoring
+          hackathon teams, and speaking on open source, AI, and developer growth.
         </p>
         <div className="activities-track">
           {activities.map((activity, index) => (

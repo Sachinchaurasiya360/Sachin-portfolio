@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { config } from "../config";
 import { MdArrowOutward } from "react-icons/md";
+import { FaGithub } from "react-icons/fa";
 import { useEffect } from "react";
 import "./MyWorks.css";
 
@@ -46,6 +47,30 @@ const MyWorks = () => {
                   {project.technologies.split(", ").map((tech, i) => (
                     <span key={i} className="myworks-tech-tag">{tech}</span>
                   ))}
+                </div>
+                <div className="myworks-links">
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="myworks-link-btn"
+                      data-cursor="disable"
+                    >
+                      Live Demo <MdArrowOutward />
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="myworks-link-btn myworks-link-btn--ghost"
+                      data-cursor="disable"
+                    >
+                      <FaGithub /> Source Code
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

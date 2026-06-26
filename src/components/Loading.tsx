@@ -35,25 +35,24 @@ const Loading = ({ percent }: { percent: number }) => {
     return () => clearInterval(interval);
   }, []);
 
-  if (percent >= 100) {
-    setTimeout(() => {
-      setTimeout(() => {
-        setIsLoaded(true);
-      }, 1000);
-    }, 600);
-  }
+  // Brief hold so the user sees 100%, then begin the exit.
+  useEffect(() => {
+    if (percent < 100) return;
+    const timer = setTimeout(() => setIsLoaded(true), 300);
+    return () => clearTimeout(timer);
+  }, [percent]);
 
   useEffect(() => {
+    if (!isLoaded) return;
+    setClicked(true);
     import("./utils/initialFX").then((module) => {
-      if (isLoaded) {
-        setClicked(true);
-        setTimeout(() => {
-          if (module.initialFX) {
-            module.initialFX();
-          }
-          setIsLoading(false);
-        }, 900);
-      }
+      // Keep the screen mounted long enough for the 0.8s exit fade.
+      setTimeout(() => {
+        if (module.initialFX) {
+          module.initialFX();
+        }
+        setIsLoading(false);
+      }, 900);
     });
   }, [isLoaded]);
 
@@ -106,13 +105,16 @@ export const setProgress = (setLoading: (value: number) => void) => {
       setLoading(percent);
     } else {
       clearInterval(interval);
+      // Keep visibly climbing toward ~90% so a slow model fetch on prod
+      // never looks frozen. `loaded()` takes over and ramps to 100 once
+      // the real model finishes loading.
       interval = setInterval(() => {
-        percent = percent + Math.round(Math.random());
+        percent = Math.min(90, percent + Math.round(Math.random() * 2) + 1);
         setLoading(percent);
-        if (percent > 91) {
+        if (percent >= 90) {
           clearInterval(interval);
         }
-      }, 2000);
+      }, 300);
     }
   }, 100);
 

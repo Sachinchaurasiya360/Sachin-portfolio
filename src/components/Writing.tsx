@@ -13,9 +13,9 @@ const articles = [
     tag: "Redis",
   },
   {
-    title: "Building Scalable Backend Systems with Node.js and Docker",
-    url: "https://medium.com/@mrsachinchaurasiya",
-    tag: "Backend",
+    title: "Memory in AI Systems: Deep Dive — Part 0",
+    url: "https://medium.com/@mrsachinchaurasiya/memory-in-ai-systems-deep-dive-part-0-64d093cd85f0",
+    tag: "AI Memory",
   },
   {
     title: "Understanding WebRTC: Real-Time Communication for the Modern Web",

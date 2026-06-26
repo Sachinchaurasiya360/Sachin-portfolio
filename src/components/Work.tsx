@@ -5,6 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import { config } from "../config";
 import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
+import { MdArrowOutward } from "react-icons/md";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,6 +77,30 @@ const Work = () => {
                     <h4>{project.title}</h4>
                     <p>{project.category}</p>
                   </div>
+                </div>
+                <div className="work-links">
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="work-link-btn"
+                      data-cursor="disable"
+                    >
+                      Live <MdArrowOutward />
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="work-link-btn work-link-btn--ghost"
+                      data-cursor="disable"
+                    >
+                      <FaGithub /> Code
+                    </a>
+                  )}
                 </div>
                 <p className="work-tagline">{project.tagline}</p>
                 <h4>Tools and features</h4>
