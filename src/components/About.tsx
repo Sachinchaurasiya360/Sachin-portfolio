@@ -1,17 +1,15 @@
-import "./styles/About.css";
-import { config } from "../config";
+import Section from "./Section";
+import Reveal from "./Reveal";
+import { about } from "../content";
 
-const About = () => {
-  return (
-    <div className="about-section" id="about">
-      <div className="about-me">
-        <h3 className="title">{config.about.title}</h3>
-        <p className="para">
-          {config.about.description}
-        </p>
-      </div>
-    </div>
-  );
-};
+const About = () => (
+  <Section id="about" label="About">
+    <Reveal className="about-body">
+      {about.map((para, i) => (
+        <p key={i}>{para}</p>
+      ))}
+    </Reveal>
+  </Section>
+);
 
 export default About;

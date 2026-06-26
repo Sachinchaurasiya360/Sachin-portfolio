@@ -1,106 +1,38 @@
-import { MdArrowOutward } from "react-icons/md";
-import "./styles/Writing.css";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import Section from "./Section";
+import Reveal from "./Reveal";
+import { ArrowUpRight } from "./icons";
+import { writing, links } from "../content";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const articles = [
-  {
-    title: "Redis Deep Dive Series: Part 0 — The Foundation You Need Before Going Deep",
-    url: "https://medium.com/@mrsachinchaurasiya/redis-deep-dive-series-part-0-the-foundation-you-need-before-going-deep-dafb0439b128",
-    tag: "Redis",
-  },
-  {
-    title: "Memory in AI Systems: Deep Dive — Part 0",
-    url: "https://medium.com/@mrsachinchaurasiya/memory-in-ai-systems-deep-dive-part-0-64d093cd85f0",
-    tag: "AI Memory",
-  },
-  {
-    title: "Understanding WebRTC: Real-Time Communication for the Modern Web",
-    url: "https://medium.com/@mrsachinchaurasiya",
-    tag: "WebRTC",
-  },
-  {
-    title: "From Monolith to Microservices: A Practical Migration Guide",
-    url: "https://medium.com/@mrsachinchaurasiya",
-    tag: "Architecture",
-  },
-];
-
-const Writing = () => {
-  useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".writing-section",
-        start: "top 80%",
-        end: "bottom center",
-        toggleActions: "play none none none",
-      },
-    });
-
-    tl.fromTo(
-      ".writing-section h2",
-      { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }
-    );
-
-    tl.fromTo(
-      ".writing-article",
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.5, stagger: 0.12, ease: "power3.out" },
-      "-=0.3"
-    );
-
-    tl.fromTo(
-      ".writing-more",
-      { opacity: 0 },
-      { opacity: 1, duration: 0.5, ease: "power3.out" },
-      "-=0.2"
-    );
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
-
-  return (
-    <div className="writing-section section-container">
-      <h2>
-        My <span>Writing</span>
-      </h2>
-
+const Writing = () => (
+  <Section id="writing" label="Writing">
+    <Reveal>
       <div className="writing-list">
-        {articles.map((article, index) => (
+        {writing.map((a) => (
           <a
-            key={index}
-            href={article.url}
+            key={a.title}
+            href={a.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="writing-article"
-            data-cursor="disable"
+            className="writing-item"
           >
-            <div className="writing-article-left">
-              <span className="writing-tag">{article.tag}</span>
-              <h3>{article.title}</h3>
-            </div>
-            <MdArrowOutward className="writing-arrow" />
+            <span className="writing-tag">{a.tag}</span>
+            <h3>{a.title}</h3>
+            <span className="writing-arrow">
+              <ArrowUpRight />
+            </span>
           </a>
         ))}
       </div>
-
       <a
-        href="https://medium.com/@mrsachinchaurasiya"
+        href={links.writing}
         target="_blank"
         rel="noopener noreferrer"
         className="writing-more"
-        data-cursor="disable"
       >
-        Read more on Medium →
+        More on Medium →
       </a>
-    </div>
-  );
-};
+    </Reveal>
+  </Section>
+);
 
 export default Writing;

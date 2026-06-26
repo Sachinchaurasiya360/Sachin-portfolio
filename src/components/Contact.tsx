@@ -1,132 +1,38 @@
-import { MdArrowOutward } from "react-icons/md";
-import { FiCalendar } from "react-icons/fi";
-import "./styles/Contact.css";
-import { config } from "../config";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import Section from "./Section";
+import Reveal from "./Reveal";
+import { ArrowUpRight, GitHub, Calendar } from "./icons";
+import { links } from "../content";
 
-gsap.registerPlugin(ScrollTrigger);
+const Contact = () => (
+  <Section id="contact" label="Contact">
+    <Reveal className="contact">
+      <h2>Let’s build something.</h2>
+      <p className="contact-lede">
+        I take on freelance work: full-stack products, backend systems, and
+        AI features that need to actually hold up in production. If that’s what
+        you’re after, the fastest way to reach me is email.
+      </p>
 
-const Contact = () => {
-  useEffect(() => {
-    const contactTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".contact-section",
-        start: "top 80%",
-        end: "bottom center",
-        toggleActions: "play none none none",
-      },
-    });
+      <a className="contact-email" href={`mailto:${links.email}`}>
+        {links.email}
+      </a>
 
-    contactTimeline.fromTo(
-      ".contact-heading",
-      { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
-    );
-
-    contactTimeline.fromTo(
-      ".contact-email",
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
-      "-=0.4"
-    );
-
-    contactTimeline.fromTo(
-      ".contact-book-call",
-      { opacity: 0, y: 24 },
-      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
-      "-=0.35"
-    );
-
-    contactTimeline.fromTo(
-      ".contact-social-link",
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power3.out" },
-      "-=0.3"
-    );
-
-    contactTimeline.fromTo(
-      ".contact-bottom",
-      { opacity: 0 },
-      { opacity: 1, duration: 0.6, ease: "power3.out" },
-      "-=0.2"
-    );
-
-    return () => {
-      contactTimeline.kill();
-    };
-  }, []);
-
-  return (
-    <footer className="contact-section section-container" id="contact">
-      <div className="contact-container">
-        <div className="contact-top-line"></div>
-
-        <h3 className="contact-heading">Let's Work Together</h3>
-        <p className="contact-subtext">
-          Have a project in mind? I'm available for freelance work — from full-stack web apps to AI-powered solutions.
-        </p>
-
-        <a
-          href={`mailto:${config.contact.email}?subject=Freelance%20Inquiry`}
-          className="contact-email"
-          data-cursor="disable"
-        >
-          {config.contact.email}
+      <div className="contact-actions">
+        <a href={links.call} target="_blank" rel="noopener noreferrer">
+          <Calendar /> Book a 30-min call
         </a>
-
-        <div className="contact-cta-row">
-          <a
-            href={config.contact.calendly}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-book-call"
-            data-cursor="disable"
-          >
-            <FiCalendar /> Book a 30-min Call
-          </a>
-        </div>
-
-        <div className="contact-socials">
-          <a
-            href={config.contact.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor="disable"
-            className="contact-social-link"
-          >
-            Github <MdArrowOutward />
-          </a>
-          <a
-            href={config.contact.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor="disable"
-            className="contact-social-link"
-          >
-            Linkedin <MdArrowOutward />
-          </a>
-          <a
-            href={config.contact.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor="disable"
-            className="contact-social-link"
-          >
-            Twitter <MdArrowOutward />
-          </a>
-        </div>
-
-        <div className="contact-divider"></div>
-
-        <div className="contact-bottom">
-          <span>&copy; {new Date().getFullYear()} {config.developer.fullName}</span>
-          <span>{config.social.location}</span>
-        </div>
+        <a href={links.github} target="_blank" rel="noopener noreferrer">
+          <GitHub /> GitHub
+        </a>
+        <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
+          LinkedIn <ArrowUpRight />
+        </a>
+        <a href={links.twitter} target="_blank" rel="noopener noreferrer">
+          Twitter <ArrowUpRight />
+        </a>
       </div>
-    </footer>
-  );
-};
+    </Reveal>
+  </Section>
+);
 
 export default Contact;
