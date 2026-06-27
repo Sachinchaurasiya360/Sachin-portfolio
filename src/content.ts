@@ -111,7 +111,7 @@ export const experience: Experience[] = [
   {
     role: "Full-Stack Intern",
     company: "Aaradhay Tech",
-    period: "Jun 2024 – Aug 2024",
+    period: "Jun 2025 – Nov 2025",
     location: "Mumbai, India",
     description:
       "Improved platform performance by 35% by refactoring backend services, moving inter-service communication to gRPC, and restructuring MongoDB queries with proper indexing. Rebuilt the event creation, team formation, and submission pipelines on Express for nearly 30% faster interactions.",
