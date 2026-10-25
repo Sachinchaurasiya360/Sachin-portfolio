@@ -1,29 +1,36 @@
 import { Analytics } from "@vercel/analytics/react";
-import Nav from "./components/Nav";
-import Hero from "./components/Hero";
 import About from "./components/About";
-import Work from "./components/Work";
-import Experience from "./components/Experience";
-import BeyondCode from "./components/BeyondCode";
-import Writing from "./components/Writing";
 import Contact from "./components/Contact";
+import Experience from "./components/Experience";
+import Expertise from "./components/Expertise";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Impact from "./components/Impact";
+import Nav from "./components/Nav";
+import Projects from "./components/Projects";
+import Work from "./components/Work";
+import Writing from "./components/Writing";
 
-const App = () => (
-  <>
-    <Nav />
-    <main>
-      <Hero />
-      <About />
-      <Work />
-      <Experience />
-      <BeyondCode />
-      <Writing />
-      <Contact />
-    </main>
-    <Footer />
-    <Analytics />
-  </>
-);
-
-export default App;
+export default function App() {
+  return (
+    <>
+      <a href="#work" className="skip-link">
+        Skip to content
+      </a>
+      <Nav />
+      <main>
+        <Hero />
+        <Work />
+        <Projects />
+        <Impact />
+        <Experience />
+        <Expertise />
+        <Writing />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+      <Analytics />
+    </>
+  );
+}

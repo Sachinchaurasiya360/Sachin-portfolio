@@ -1,38 +1,35 @@
-import Section from "./Section";
-import Reveal from "./Reveal";
-import { ArrowUpRight } from "./icons";
-import { writing, links } from "../content";
+import { links, writing } from "../content";
+import SectionHead from "./SectionHead";
 
-const Writing = () => (
-  <Section id="writing" label="Writing">
-    <Reveal>
-      <div className="writing-list">
-        {writing.map((a) => (
-          <a
-            key={a.title}
-            href={a.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="writing-item"
-          >
-            <span className="writing-tag">{a.tag}</span>
-            <h3>{a.title}</h3>
-            <span className="writing-arrow">
-              <ArrowUpRight />
-            </span>
+export default function Writing() {
+  return (
+    <section id="writing" className="section">
+      <div className="container">
+        <SectionHead
+          index="06"
+          label="Writing"
+          title="Notes from going deep."
+          lede="Long-form explanations of systems I wanted to understand properly."
+        />
+        <ul className="rows">
+          {writing.map((a) => (
+            <li key={a.title}>
+              <a href={a.url} target="_blank" rel="noopener noreferrer" className="row article-row grid">
+                <span className="row-meta mono">{a.topic}</span>
+                <span className="article-title">{a.title}</span>
+                <span className="article-go mono" aria-hidden="true">
+                  Read ↗
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p className="section-foot">
+          <a href={links.writing} target="_blank" rel="noopener noreferrer" className="link">
+            All writing on Medium <span aria-hidden="true">↗</span>
           </a>
-        ))}
+        </p>
       </div>
-      <a
-        href={links.writing}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="writing-more"
-      >
-        More on Medium →
-      </a>
-    </Reveal>
-  </Section>
-);
-
-export default Writing;
+    </section>
+  );
+}

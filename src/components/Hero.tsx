@@ -1,28 +1,40 @@
-import { profile, links } from "../content";
+import { hero, profile } from "../content";
 
-const Hero = () => (
-  <header id="top" className="hero">
-    <div className="wrap">
-      {profile.available && (
-        <p className="hero-status">
-          <span className="status-dot" aria-hidden="true" />
-          Available for work
+export default function Hero() {
+  return (
+    <section id="top" className="hero">
+      <div className="container">
+        <p className="hero-meta">
+          <span className="status" aria-hidden="true" />
+          <span>{profile.city}, India</span>
+          <span className="sep" aria-hidden="true">/</span>
+          <span>Open to freelance work</span>
         </p>
-      )}
-      <h1>
-        {profile.name}
-        <span className="role">{profile.role}</span>
-      </h1>
-      <p className="hero-lede">{profile.headline}</p>
-      <div className="hero-meta">
-        <span>{profile.location}</span>
-        <a href={`mailto:${links.email}`}>{links.email}</a>
-        <a href={links.github} target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-      </div>
-    </div>
-  </header>
-);
 
-export default Hero;
+        <div className="grid hero-grid">
+          <div className="hero-main">
+            <h1>{hero.headline}</h1>
+            <p className="hero-intro">{hero.intro}</p>
+            <div className="hero-actions">
+              <a href="#work" className="button button-primary">
+                View selected work
+              </a>
+              <a href="#contact" className="button button-quiet">
+                Get in touch <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <dl className="hero-focus">
+            {hero.focus.map((f) => (
+              <div key={f.label}>
+                <dt>{f.label}</dt>
+                <dd>{f.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+  );
+}

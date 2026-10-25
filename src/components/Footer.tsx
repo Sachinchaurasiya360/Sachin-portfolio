@@ -1,16 +1,17 @@
 import { profile } from "../content";
 
-const year = new Date().getFullYear();
-
-const Footer = () => (
-  <footer className="footer">
-    <div className="wrap footer-inner">
-      <span>
-        © {year} {profile.name}
-      </span>
-      <span>{profile.location}</span>
-    </div>
-  </footer>
-);
-
-export default Footer;
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container footer-inner">
+        <p>
+          © {new Date().getFullYear()} {profile.name}
+        </p>
+        <p>Designed and built by hand in React and TypeScript.</p>
+        <a href="#top" className="link link-quiet">
+          Back to top <span aria-hidden="true">↑</span>
+        </a>
+      </div>
+    </footer>
+  );
+}

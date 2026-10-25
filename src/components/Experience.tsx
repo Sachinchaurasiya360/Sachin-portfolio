@@ -1,23 +1,42 @@
-import Section from "./Section";
-import Reveal from "./Reveal";
 import { experience } from "../content";
+import SectionHead from "./SectionHead";
 
-const Experience = () => (
-  <Section id="experience" label="Experience">
-    <div className="exp-list">
-      {experience.map((e) => (
-        <Reveal as="article" className="exp" key={e.company}>
-          <p className="exp-period">{e.period}</p>
-          <div className="exp-head">
-            <h3>{e.role}</h3>
-            <span className="exp-company">{e.company}</span>
-            <span className="exp-location">{e.location}</span>
-          </div>
-          <p>{e.description}</p>
-        </Reveal>
-      ))}
-    </div>
-  </Section>
-);
+export default function Experience() {
+  return (
+    <section id="experience" className="section">
+      <div className="container">
+        <SectionHead
+          index="04"
+          label="Experience"
+          title="Where I have worked."
+          lede="Product teams where I owned features from the database to the interface."
+        />
 
-export default Experience;
+        <ol className="timeline">
+          {experience.map((r) => (
+            <li key={r.company} className="role grid">
+              <div className="role-when">
+                <p className="mono">{r.period}</p>
+                <p className="mono role-where">{r.location}</p>
+                {r.current && <p className="role-now mono">Current</p>}
+              </div>
+              <div className="role-body">
+                <h3>
+                  {r.company}
+                  <span className="role-title">{r.role}</span>
+                </h3>
+                <p className="role-summary">{r.summary}</p>
+                <ul className="ticks">
+                  {r.highlights.map((h) => (
+                    <li key={h}>{h}</li>
+                  ))}
+                </ul>
+                <p className="stack mono">{r.stack.join(" / ")}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
